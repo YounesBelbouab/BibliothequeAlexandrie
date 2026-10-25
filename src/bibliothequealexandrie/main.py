@@ -45,7 +45,6 @@ class Gestionnaire(SimpleHTTPRequestHandler):
             self._repondre(400, {"erreurs": erreurs})
             return
 
-        # TODO : enregistrer l'utilisateur (avec un mot de passe haché).
         self._repondre(201, {"message": f"Compte créé pour {email} !"})
 
     def _repondre(self, statut: int, corps: dict) -> None:
