@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliothèque d'Alexandrie — Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="carte">
+    <h1>Créer un compte</h1>
+
+    <form id="formulaire-inscription" novalidate>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
+      <p class="erreur" id="erreur-email"></p>
+
+      <label for="mot-de-passe">Mot de passe</label>
+      <input type="password" id="mot-de-passe" name="mot-de-passe" autocomplete="new-password" required>
+      <p class="erreur" id="erreur-mot-de-passe"></p>
+
+      <label class="case">
+        <input type="checkbox" id="afficher-mdp">
+        Afficher le mot de passe
+      </label>
+
+      <button type="submit">S'inscrire</button>
+      <p class="succes" id="message-succes"></p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f3efe6;
+  color: #2b2b2b;
+}
+
+.carte {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #8b5e1a;
+}
+
+input.invalide {
+  border-color: #c0392b;
+}
+
+.erreur {
+  min-height: 1.2em;
+  margin: 4px 0 12px;
+  font-size: 0.85rem;
+  color: #c0392b;
+}
+
+.case {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #8b5e1a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6f4a14;
+}
+
+.succes {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #27794a;
+}
