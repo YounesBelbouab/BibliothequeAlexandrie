@@ -1,28 +1,13 @@
 """Serveur de la Bibliothèque d'Alexandrie : sert le front et reçoit les inscriptions."""
 
 import json
-import re
 from functools import partial
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
+from service import inscrire_adherent
+
 DOSSIER_FRONTEND = Path(__file__).resolve().parents[2] / "frontend"
-EMAIL_REGEX = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
-MOT_DE_PASSE_LONGUEUR_MIN = 8
-
-
-def valider_inscription(email: str, mot_de_passe: str) -> list[str]:
-    """Retourne la liste des erreurs de saisie (vide si tout est valide)."""
-    erreurs = []
-    if not email:
-        erreurs.append("L'e-mail est obligatoire.")
-    elif not EMAIL_REGEX.match(email):
-        erreurs.append("L'e-mail n'est pas valide.")
-    if len(mot_de_passe) < MOT_DE_PASSE_LONGUEUR_MIN:
-        erreurs.append(
-            f"Le mot de passe doit contenir au moins {MOT_DE_PASSE_LONGUEUR_MIN} caractères."
-        )
-    return erreurs
 
 
 class Gestionnaire(SimpleHTTPRequestHandler):
@@ -40,12 +25,12 @@ class Gestionnaire(SimpleHTTPRequestHandler):
             self._repondre(400, {"erreurs": ["Requête invalide."]})
             return
 
-        erreurs = valider_inscription(email, mot_de_passe)
+        erreurs = inscrire_adherent(email, mot_de_passe)
         if erreurs:
             self._repondre(400, {"erreurs": erreurs})
             return
 
-        self._repondre(201, {"message": f"Compte créé pour {email} !"})
+        self._repondre(201, {"message": f"Bienvenue {email}, vous êtes connecté !"})
 
     def _repondre(self, statut: int, corps: dict) -> None:
         contenu = json.dumps(corps).encode("utf-8")
