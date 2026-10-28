@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliothèque d'Alexandrie — Recherche d'adhérents</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="carte carte-large">
+    <h1>Rechercher un adhérent</h1>
+
+    <form id="formulaire-recherche" role="search">
+      <label for="recherche">Nom, prénom ou e-mail</label>
+      <input type="search" id="recherche" name="q" autocomplete="off" placeholder="ex. Hypatie">
+    </form>
+
+    <p class="statut" id="statut" aria-live="polite"></p>
+    <ul class="liste-adherents" id="liste-adherents"></ul>
+  </main>
+
+  <script src="recherche.js"></script>
+</body>
+</html>

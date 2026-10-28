@@ -37,7 +37,8 @@ label {
 
 input[type="email"],
 input[type="password"],
-input[type="text"] {
+input[type="text"],
+input[type="search"] {
   width: 100%;
   padding: 10px 12px;
   font-size: 1rem;
@@ -90,4 +91,39 @@ button:hover {
   margin: 12px 0 0;
   text-align: center;
   color: #27794a;
+}
+
+.carte-large {
+  max-width: 520px;
+}
+
+.statut {
+  min-height: 1.2em;
+  margin: 12px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.liste-adherents {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.liste-adherents li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.liste-adherents li:last-child {
+  border-bottom: none;
+}
+
+.liste-adherents span {
+  font-size: 0.9rem;
+  color: #666;
+  overflow-wrap: anywhere;
 }
